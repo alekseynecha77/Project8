@@ -1,23 +1,38 @@
-const card = document.querySelector('.card');
-// const gridContainer = document.querySelector(".grid-container");
 
-// const urlAPI = `http://randomuser.me/api/?results=12&inc=name, picture,
-// email, location, phone, dob &noinfo &nat=US`
+let employees = [];
+const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture,
+email, location, phone, dob &noinfo &nat=US`
+const gridContainer = document.querySelector(".grid-container");
+ 
+fetch(urlAPI)
+.then(res => res.json())
+  .then(res => res.results)
+  .then(displayEmployees)
+  .catch(err => console.log(err))
 
-// let employees = [];
 
 
-
-
-fetch('https://randomuser.me/api/')
-.then(response => response.json())
-.then(data => generateImage(data.message))
-
-function generateImage(data){
-    const html = `
-    <img src ='${data}' alt>
-    
-    `;
-    card.innerHTML = html;
-
+function displayEmployees(employeeData) {
+    employees = employeeData;
+    // store the employee HTML as we create it
+    let employeeHTML = '';
+    // loop through each employee and create HTML markup
+    employees.forEach((employee, index) => {
+      let name = employee.name;
+      let email = employee.email;
+      let city = employee.location.city;
+      let picture = employee.picture;
+      // template literals make this so much cleaner!
+      employeeHTML += `
+        <div class="card" data-index="${index}">
+          <img class="avatar" src="${picture.large}" />
+          <div class="text-container">
+            <h2 class="name">${name.first} ${name.last}</h2>
+            <p class="email">${email}</p>
+            <p class="address">${city}</p>
+          </div>
+        </div>
+  `
+    });
+    gridContainer.innerHTML = employeeHTML;
 }
