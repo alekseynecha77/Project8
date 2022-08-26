@@ -1,16 +1,21 @@
 const card = document.querySelector('.card');
-const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture,
-email, location, phone, dob &noinfo &nat=US`
+// const gridContainer = document.querySelector(".grid-container");
+
+// const urlAPI = `http://randomuser.me/api/?results=12&inc=name, picture,
+// email, location, phone, dob &noinfo &nat=US`
+
+// let employees = [];
 
 
-fetch(urlAPI)
+
+
+fetch('https://randomuser.me/api/')
 .then(response => response.json())
 .then(data => generateImage(data.message))
 
 function generateImage(data){
     const html = `
-    <img src ='${data} 'alt>
-    <p>llllll<p>
+    <img src ='${data}' alt>
     
     `;
     card.innerHTML = html;
