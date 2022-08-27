@@ -26,9 +26,9 @@ body {
   top: 5px;
   cursor: pointer;
 }
-.hidden {
-  display: none;
-}
+/* .hidden { */
+  /* display: none; */
+/* } */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
@@ -37,3 +37,32 @@ body {
   grid-gap: 25px;
   margin: 0 auto;
 }
+.arrow-left {
+    position: absolute;
+    right: 15px;
+    top: 189px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.arrow-right{
+    position: absolute;
+    left: 15px;
+    top: 189px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+ .arrows img{
+    height: 60%;
+    padding-bottom: 0;
+}
+
+
+
+  .open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }

@@ -8,13 +8,12 @@ const modalClose = document.querySelector(".modal-close");
 
 fetch(urlAPI)
   .then((res) => res.json())
-  .then((res) => res.lresults)
   .then(displayEmployees)
   .catch((err) => console.log(err));
 
 
 function displayEmployees(employeeData) {
-  employees = employeeData;
+  employees = employeeData.results;
   // store the employee HTML as we create it
   let employeeHTML = "";
   // loop through each employee and create HTML markup
@@ -81,10 +80,18 @@ gridContainer.addEventListener("click", (e) => {
   // make sure the click is not on the gridContainer itself
   if (e.target !== gridContainer) {
     const card = e.target.closest(".card");
-    const index = e.target.getAttribute("data-index");
+     index = card.getAttribute("data-index");
     displayModal(index);
   }
 });
 modalClose.addEventListener("click", () => {
   overlay.classList.add("hidden");
 });
+
+const popup = document.getElementById('popcard')
+function openPopup() {
+  popup.classList.add("open-popup");
+}
+function closePopup() {
+  popup.classList.remove("open-popup");
+}

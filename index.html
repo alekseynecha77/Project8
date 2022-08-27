@@ -12,19 +12,19 @@
       <h1>Awesome Startup Employee Directory</h1>
     </header>
 
-    <main class="grid-container">
-      <div class="card">
-        <div class="overlay hidden">
-          <div class="modal">
-            <button class="modal-close">X</button>
+    <main class="grid-container" >
+      <div class="card" onclick="openPopup()" >
+        <div class="overlay hidden" >
+          <div class="modal" id="popcard">
+            <button class="modal-close" onclick="closePopup()">X</button>
             <div class="modal-content">
               <!-- modal information will be added with JS here -->
 
         
               </div>
               <div class="arrows">
-                <img src="left-arrow.png"  alt="left arrow" class="arrow-left" id="left">
                 <img src="arrow-right.png" alt="right arrow" class="arrow-right" id="right">
+                <img src="left-arrow.png"  alt="left arrow" class="arrow-left" id="left">
               </div>
             </div>
           </div>
