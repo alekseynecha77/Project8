@@ -87,7 +87,7 @@ gridContainer.addEventListener("click", (e) => {
 modalClose.addEventListener("click", () => {
   overlay.classList.add("hidden");
 });
-
+    
 const popup = document.getElementById('popcard')
 function openPopup() {
   popup.classList.add("open-popup");
