@@ -9,17 +9,35 @@ body {
   bottom: 0;
   background: rgba(100, 100, 100, 0.4);
 }
-.modal {
-  width: 375px;
+.modal{
+  width: 50%;
   margin: 15% auto auto;
-  position: relative;
   text-align: center;
   background: #fff;
+  position: relative;
   border: 1px solid #778;
   border-radius: 5px;
   padding: 30px 20px;
 }
 
+/* #popcard { */
+    /* width: 100%; */
+    /* height: 100%; */
+    /* top: 0; */
+    /* position: absolute; */
+    /* visibility: hidden; */
+    /* display: none; */
+    /* background-color: rgba(22,22,22,0.5); complimenting your modal colors */
+/* } */
+/* #popcard:target { */
+    /* visibility: visible; */
+    /* display: block; */
+/* } */
+/* .modal { */
+    /* position: relative; */
+    /* margin: 0 auto; */
+    /* top: 25%; */
+/* } */
 .modal-close {
   position: absolute;
   right: 15px;
@@ -37,23 +55,23 @@ body {
   grid-gap: 25px;
   margin: 0 auto;
 }
-.arrow-left {
-    position: absolute;
-    right: 15px;
-    top: 189px;
-    background-color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.arrow-right{
-    position: absolute;
-    left: 15px;
-    top: 189px;
-    background-color: white;
-    border: none;
-    cursor: pointer;
-}
+/* .arrow-left { */
+    /* position: relative; */
+    /* right: 15px; */
+    /* top: 189px; */
+    /* background-color: white; */
+    /* border: none; */
+    /* cursor: pointer; */
+/* } */
+/*  */
+/* .arrow-right{ */
+    /* position: relative; */
+    /* left: 15px; */
+    /* top: 189px; */
+    /* background-color: white; */
+    /* border: none; */
+    /* cursor: pointer; */
+/* } */
  .arrows img{
     height: 60%;
     padding-bottom: 0;
@@ -63,6 +81,7 @@ body {
 
   .open-popup {
     visibility: visible;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(1);
+    top: 0;
+    left: 0;
+    transform: translate(-60%, -60%) scale(1);
   }
