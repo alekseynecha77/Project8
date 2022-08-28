@@ -87,7 +87,7 @@ gridContainer.addEventListener("click", (e) => {
 modalClose.addEventListener("click", () => {
   overlay.classList.add("hidden");
 });
-    
+
 const popup = document.getElementById('popcard')
 function openPopup() {
   popup.classList.add("open-popup");
@@ -95,3 +95,32 @@ function openPopup() {
 function closePopup() {
   popup.classList.remove("open-popup");
 }
+
+const leftArrow = document.querySelector('.arrow-left');
+const rightArrow = document.querySelector('.arrow-right');
+
+
+leftArrow.addEventListener('click', ()=>{
+    if(index != 11){
+        index = Number.parseInt(index, 10) +1;
+        displayModal(index);
+
+    }
+    else{
+        index = 0;
+        displayModal(0);
+    }
+
+
+})
+
+rightArrow.addEventListener('click', ()=>{
+if(index != 0)
+{
+    index = Number.parseInt(index, 10) -1;
+    displayModal(index)
+}else{
+    index = 11;
+    displayModal(1);
+}
+});
