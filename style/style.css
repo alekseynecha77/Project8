@@ -94,3 +94,8 @@ header {
     align-items: center;
     margin: 1em;
 }
+
+.text-container {
+    font-size: .7em;
+
+}
