@@ -2,43 +2,39 @@ body {
   position: relative;
 }
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(100, 100, 100, 0.4);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(100, 100, 100, 0.4)
+
 }
 .modal{
   width: 40%;
-  margin: 15% auto auto;
+  margin: 35% 55% auto;
   text-align: center;
   background: #fff;
-  position: relative;
+  position: absolute;
   border: 1px solid #778;
   border-radius: 5px;
   padding: 30px 20px;
 
+
+}
+img {
+    border-radius: 50%;
+    height: 75px;
+    padding: 1em;
+
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* #popcard { */
-    /* width: 100%; */
-    /* height: 100%; */
-    /* top: 0; */
-    /* position: absolute; */
-    /* visibility: hidden; */
-    /* display: none; */
-    /* background-color: rgba(22,22,22,0.5); complimenting your modal colors */
-/* } */
-/* #popcard:target { */
-    /* visibility: visible; */
-    /* display: block; */
-/* } */
-/* .modal { */
-    /* position: relative; */
-    /* margin: 0 auto; */
-    /* top: 25%; */
-/* } */
 .modal-close {
   position: absolute;
   right: 15px;
@@ -49,12 +45,13 @@ body {
   display: none;
 }
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
-  justify-content: center;
-  max-width: 875px;
-  grid-gap: 25px;
-  margin: 0 auto;
+  
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    
+
 }
 .arrow-left {
     position: absolute;
@@ -88,3 +85,12 @@ body {
     left: 0;
     transform: translate(-60%, -60%) scale(1);
   }
+  .card {
+    border: 1px gray solid;
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    width: 300px;
+    align-items: center;
+    margin: 1em;
+}
