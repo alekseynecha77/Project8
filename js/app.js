@@ -42,12 +42,17 @@ function displayModal(index) {
   let {
     name,
     dob,
+     year = dob.slice(0,4),
+     month = dob.slice(5,7),
+    day = dob.slice(8,10),
     phone,
     email,
     location: { city, street, state, postcode },
     picture,
   } = employees[index];
+
   let date = new Date(dob.date);
+
   const modalHTML = `
       <img class="avatar" src="${picture.large}" />
       <div class="text-container">
