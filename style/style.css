@@ -95,7 +95,7 @@ img {
   visibility: visible;
   top: 0;
   left: 0;
-  transform: translate(-60%, -60%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 .card {
   border: 1px gray solid;
