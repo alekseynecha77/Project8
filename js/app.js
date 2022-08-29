@@ -80,7 +80,7 @@ gridContainer.addEventListener("click", (e) => {
   // make sure the click is not on the gridContainer itself
   if (e.target !== gridContainer) {
     const card = e.target.closest(".card");
-     index = card.getAttribute("data-index");
+      index = card.getAttribute("data-index");
     displayModal(index);
   }
 });
@@ -121,6 +121,6 @@ if(index != 0)
     displayModal(index)
 }else{
     index = 11;
-    displayModal(1);
+    displayModal(11);
 }
 });
