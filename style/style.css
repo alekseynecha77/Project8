@@ -1,17 +1,23 @@
 body {
   position: relative;
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
 .overlay {
-
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(100, 100, 100, 0.4)
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(100, 100, 100, 0.4);
 }
-.modal{
+
+.modal {
   width: 40%;
   margin: 35% 55% auto;
   text-align: center;
@@ -20,20 +26,13 @@ body {
   border: 1px solid #778;
   border-radius: 5px;
   padding: 30px 20px;
-
-
 }
 img {
-    border-radius: 50%;
-    height: 75px;
-    padding: 1em;
+  border-radius: 50%;
+  height: 75px;
+  padding: 1em;
+}
 
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .modal-close {
   position: absolute;
@@ -45,57 +44,63 @@ header {
   display: none;
 }
 .grid-container {
-  
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    
-
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .arrow-left {
-    position: absolute;
-    right: 0;
-    top: 189px;
-    background-color: white;
-    border: none;
-    cursor: pointer;
-    
+  position: absolute;
+  right: 0;
+  top: 189px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.arrow-right{
-    position: absolute;
-    left: 0;
-    top: 189px;
-    background-color: white;
-    border: none;
-    cursor: pointer;
+.arrow-right {
+  position: absolute;
+  left: 0;
+  top: 189px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
 }
- .arrows img{
-    height: 17%;
-    padding-bottom: 0;
-    width: 12%;
+.arrows img {
+  height: 17%;
+  padding-bottom: 0;
+  width: 32%;
 }
 
-
-
-  .open-popup {
-    visibility: visible;
-    top: 0;
-    left: 0;
-    transform: translate(-60%, -60%) scale(1);
-  }
-  .card {
-    border: 1px gray solid;
-    border-radius: 5px;
-    background-color: white;
-    display: flex;
-    width: 300px;
-    align-items: center;
-    margin: 1em;
+.open-popup {
+  visibility: visible;
+  top: 0;
+  left: 0;
+  transform: translate(-60%, -60%) scale(1);
+}
+.card {
+  border: 1px gray solid;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  width: 300px;
+  align-items: center;
+  margin: 1em;
 }
 
 .text-container {
-    font-size: .7em;
+  font-size: 0.7em;
+}
+p {
+  color: gray;
+}
+h1 {
+  font-size: 1em;
+  margin-top: 2em;
+  margin-left: 1em;
+  text-transform: uppercase;
+}
 
+h2 {
+  margin-bottom: 0;
 }
