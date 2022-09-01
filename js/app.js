@@ -11,7 +11,6 @@ fetch(urlAPI)
   .then(displayEmployees)
   .catch((err) => console.log(err));
 
-
 function displayEmployees(employeeData) {
   employees = employeeData.results;
   // store the employee HTML as we create it
@@ -42,7 +41,7 @@ function displayModal(index) {
   let {
     name,
     dob,
- /*     year = dob.slice(0,4),
+    /*     year = dob.slice(0,4),
      month = dob.slice(5,7),
     day = dob.slice(8,10), */
     phone,
@@ -61,17 +60,16 @@ function displayModal(index) {
         <p class="address">${city}</p>
         <hr />
         <p>${phone}</p>
-        <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
+        <p class="address">${street.number} ${
+    street.name
+  }, ${state} ${postcode}</p>
         <p>Birthday:
   ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
       </div>
   `;
   overlay.classList.remove("hidden");
   modalContainer.innerHTML = modalHTML;
-
-
 }
-
 
 // ● Event Listeners
 // ○ gridContainer click event
@@ -89,7 +87,7 @@ gridContainer.addEventListener("click", (e) => {
   // make sure the click is not on the gridContainer itself
   if (e.target !== gridContainer) {
     const card = e.target.closest(".card");
-      index = card.getAttribute("data-index");
+    index = card.getAttribute("data-index");
     displayModal(index);
   }
 });
@@ -97,7 +95,7 @@ modalClose.addEventListener("click", () => {
   overlay.classList.add("hidden");
 });
 
-const popup = document.getElementById('popcard')
+const popup = document.getElementById("popcard");
 function openPopup() {
   popup.classList.add("open-popup");
 }
@@ -105,31 +103,44 @@ function closePopup() {
   popup.classList.remove("open-popup");
 }
 
-const leftArrow = document.querySelector('.arrow-left');
-const rightArrow = document.querySelector('.arrow-right');
+const leftArrow = document.querySelector(".arrow-left");
+const rightArrow = document.querySelector(".arrow-right");
 
+leftArrow.addEventListener("click", () => {
+  if (index != 11) {
+    index = Number.parseInt(index, 10) + 1;
+    displayModal(index);
+  } else {
+    index = 0;
+    displayModal(0);
+  }
+});
 
-leftArrow.addEventListener('click', ()=>{
-    if(index != 11){
-        index = Number.parseInt(index, 10) +1;
-        displayModal(index);
-
-    }
-    else{
-        index = 0;
-        displayModal(0);
-    }
-
-
-})
-
-rightArrow.addEventListener('click', ()=>{
-if(index != 0)
-{
-    index = Number.parseInt(index, 10) -1;
-    displayModal(index)
-}else{
+rightArrow.addEventListener("click", () => {
+  if (index != 0) {
+    index = Number.parseInt(index, 10) - 1;
+    displayModal(index);
+  } else {
     index = 11;
     displayModal(11);
-}
+  }
 });
+
+const input = document.getElementById(".search-input");
+input.addEventListener("keyup", searchEmployees);
+
+function searchEmployees() {
+  filterVal = document.getElementById(".search-input").value.toLowerCase();
+  let anchors = document.querySelectorAll("div .card");
+
+  for (let i = 0; i <= anchors.length; i++) {
+    let captions = anchors[i].getAttribute("data-caption").toLowerCase();
+    let filter = captions.includes("filterVal");
+
+    if (filter === true) {
+      anchors[i].style.display = "grid";
+    } else {
+      anchors[i].style.display = "none";
+    }
+  }
+}
