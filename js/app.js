@@ -135,12 +135,13 @@ function searchEmployees() {
 
   for (let i = 0; i < anchors.length; i++) {
     let captions = anchors[i].innerHTML.toLowerCase();
-    let filter = captions.includes("filterVal");
+    let filter = captions.includes(filterVal);
 
     if (filter === true) {
-      anchors[i].style.display = "grid";
+      anchors[i].parentNode.parentNode.style.display = "flex";
     } else {
-      anchors[i].style.display = "none";
+      anchors[i].parentNode.parentNode.style.display = "none";
     }
   }
 }
+
