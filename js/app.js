@@ -126,14 +126,14 @@ rightArrow.addEventListener("click", () => {
   }
 });
 
-const input = document.getElementById(".search-input");
+const input = document.getElementById("search-input");
 input.addEventListener("keyup", searchEmployees);
 
 function searchEmployees() {
-  filterVal = document.getElementById(".search-input").value.toLowerCase();
-  let anchors = document.querySelectorAll("div .card");
+  filterVal = document.getElementById("search-input").value.toLowerCase();
+  let anchors = document.querySelector(".modal");
 
-  for (let i = 0; i <= anchors.length; i++) {
+  for (let i = 0; i < anchors.length; i++) {
     let captions = anchors[i].getAttribute("data-caption").toLowerCase();
     let filter = captions.includes("filterVal");
 
