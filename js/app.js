@@ -131,10 +131,10 @@ input.addEventListener("keyup", searchEmployees);
 
 function searchEmployees() {
   filterVal = document.getElementById("search-input").value.toLowerCase();
-  let anchors = document.querySelectorAll(".card");
+  let anchors = document.querySelectorAll(".name");
 
   for (let i = 0; i < anchors.length; i++) {
-    let captions = anchors[i].getAttribute("data-index").toLowerCase();
+    let captions = anchors[i].innerHTML.toLowerCase();
     let filter = captions.includes("filterVal");
 
     if (filter === true) {
